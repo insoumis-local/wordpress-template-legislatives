@@ -1,0 +1,98 @@
+.page-template-template-banner {
+  .background {
+    min-height: 100vh;
+    margin: auto auto -150px;
+    padding-top: 20px;
+    background-color: $gray-lighter;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 40px solid $brand-secondary;
+
+    .container-menu {
+      min-height: 100%;
+      color: #fff;
+
+      .logo {
+        @include make-xs-column(8);
+        @include make-xs-column-offset(2);
+        @include make-sm-column(6);
+        @include make-sm-column-offset(3);
+        @include make-md-column(4);
+        @include make-md-column-offset(4);
+        img {
+          width:100%;
+          height:auto;
+        }
+      }
+
+      .row-menu {
+        margin-bottom: 50px;
+
+        .menu-right {
+          @include make-md-column-push(6);
+        }
+        .menu {
+          @include make-xs-column(12);
+          @include make-sm-column(6);
+          @include make-md-column(3);
+          .nav-stacked {
+            li {
+              a {
+                font-size: x-large;
+                font-family: $font-family-sans-serif;
+                text-transform: lowercase;
+                font-weight: bolder;
+                width: auto;
+                margin: auto;
+                display: inline-block;
+                background: none;
+                color: #fff;
+                &:hover {
+                  background-color: rgba($gray-lighter, 0.3);
+                }
+              }
+            }
+          }
+        }
+
+      }
+      .subheadline {
+        @include make-xs-column(6);
+        @include make-sm-column(8);
+        @include make-sm-column-offset(1);
+        @include make-md-column(7);
+        @include make-md-column-offset(2);
+        @include make-lg-column(6);
+        @include make-lg-column-offset(3);
+        font-size: $font-size-h3;
+        color: inherit;
+        font-family: $font-family-serif;
+        position: absolute;
+        bottom: 20px;
+        right: 0;
+        text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.6);
+        @media (min-width: $screen-sm-min) {
+          font-size: $font-size-h1;
+          bottom: 50px;
+        }
+      }
+    }
+  }
+@media (min-width: $screen-md-min) {
+  .container-signup-banner {
+    display: flex;  /* make the row a flex container */
+    align-items: center; /* vertically center each flex item in the container */
+  }
+}
+
+  .container-signup-banner {
+    margin-top: 50px;
+    .card {
+      @include blue-card();
+      h3 {
+        font-family: Courgette,cursive;
+        font-size: 40px;
+      }
+    }
+  }
+}

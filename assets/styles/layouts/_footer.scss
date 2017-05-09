@@ -1,0 +1,26 @@
+footer.content-info {
+  border-top: 40px solid $brand-secondary;
+  background-color: #f5f5f5;
+  margin-top: 100px;
+  margin-bottom: 0px;
+  font-family: $font-family-sans-serif;
+  padding: 20px 0px;
+  hr {
+    border-color: $gray-lighter;
+  }
+
+  // Signup form
+  .container-signup-footer {
+    font-family: $font-family-serif;
+    position: relative;
+    top: -150px;
+
+    .card {
+      @include blue-card();
+      h3 {
+        font-family: Courgette,cursive;
+        font-size: 40px;
+      }
+    }
+  }
+}
