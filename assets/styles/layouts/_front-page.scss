@@ -6,6 +6,7 @@
   position: relative;
 
   .picture {
+    background-position: center center;
     background-size: cover;
     height: 30vh;
     position: relative;
@@ -28,13 +29,13 @@
 
     @media (min-width: $screen-md-min) {
       height: $cover-height;
+      width: 55%;
 
       &:after {
         border-width: 0 50px $cover-height 0;
         bottom: 0;
-        left: 55%;
+        right: 0;
         top: 0;
-        transform: translateX(-49px);
       }
     }
   }

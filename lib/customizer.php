@@ -22,9 +22,21 @@ function customize_register($wp_customize) {
     'transport' => 'refresh',
   ]);
   $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'cover', [
-    'label'    => __('Couverture', 'mytheme'),
+    'label'    => __('Couverture mobile', 'mytheme'),
+    'description' => __('Taille recommandée : 640x380', 'mytheme'),
     'section'  => 'fi-home',
     'settings' => 'cover',
+  ]));
+
+  $wp_customize->add_setting('cover-desktop', [
+    'default'   => '',
+    'transport' => 'refresh',
+  ]);
+  $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'cover-desktop', [
+    'label'    => __('Couverture desktop [optionnelle]', 'mytheme'),
+    'description' => __('Taille recommandée : 2000x1500 (avec le sujet centré)', 'mytheme'),
+    'section'  => 'fi-home',
+    'settings' => 'cover-desktop',
   ]));
 
   $wp_customize->add_setting('candidate1', [
@@ -116,6 +128,13 @@ function customize_css() {
       .fi-cover .picture {
         background-image: url(<?php echo wp_get_attachment_url($cover_id); ?>);
       }
+      <?php if ($cover_id = get_theme_mod('cover-desktop')): ?>
+      @media (min-width: 992px) {
+        .fi-cover .picture {
+          background-image: url(<?php echo wp_get_attachment_url($cover_id); ?>);
+        }
+      }
+      <?php endif; ?>
     </style>
     <?php
   }
