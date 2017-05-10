@@ -23,7 +23,7 @@ function customize_register($wp_customize) {
   ]);
   $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'cover', [
     'label'    => __('Couverture mobile', 'mytheme'),
-    'description' => __('Taille recommandée : 640x380', 'mytheme'),
+    'description' => __('Taille recommandée : 960x570', 'mytheme'),
     'section'  => 'fi-home',
     'settings' => 'cover',
   ]));
