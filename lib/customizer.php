@@ -12,9 +12,9 @@ use WP_Customize_Media_Control;
 function customize_register($wp_customize) {
   $wp_customize->get_setting('blogname')->transport = 'postMessage';
 
-  $wp_customize->add_section('general', [
-    'title'    => __('FI 2017', 'mytheme'),
-    'priority' => 30,
+  $wp_customize->add_section('fi-home', [
+    'title'    => __('FI 2017 Home', 'mytheme'),
+    'priority' => 1000,
   ]);
 
   $wp_customize->add_setting('cover', [
@@ -23,7 +23,7 @@ function customize_register($wp_customize) {
   ]);
   $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'cover', [
     'label'    => __('Couverture', 'mytheme'),
-    'section'  => 'general',
+    'section'  => 'fi-home',
     'settings' => 'cover',
   ]));
 
@@ -33,7 +33,7 @@ function customize_register($wp_customize) {
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'candidate1', [
     'label'    => __('Candidat⋅e', 'mytheme'),
-    'section'  => 'general',
+    'section'  => 'fi-home',
     'settings' => 'candidate1',
   ]));
 
@@ -43,7 +43,7 @@ function customize_register($wp_customize) {
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'candidate2', [
     'label'    => __('Remplaçant⋅e', 'mytheme'),
-    'section'  => 'general',
+    'section'  => 'fi-home',
     'settings' => 'candidate2',
   ]));
 
@@ -53,7 +53,7 @@ function customize_register($wp_customize) {
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'cities', [
     'label'    => __('Villes', 'mytheme'),
-    'section'  => 'general',
+    'section'  => 'fi-home',
     'settings' => 'cities',
     'type'     => 'textarea',
   ]));
@@ -64,9 +64,16 @@ function customize_register($wp_customize) {
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'district', [
     'label'    => __('Circonscription', 'mytheme'),
-    'section'  => 'general',
+    'section'  => 'fi-home',
     'settings' => 'district',
   ]));
+
+  // Social settings
+
+  $wp_customize->add_section('fi-social', [
+    'title'    => __('FI 2017 Social', 'mytheme'),
+    'priority' => 1000,
+  ]);
 
   $wp_customize->add_setting('twitter', [
     'default'   => 'https://twitter.com/',
@@ -74,7 +81,7 @@ function customize_register($wp_customize) {
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'twitter', [
     'label'    => __('Profil twitter', 'mytheme'),
-    'section'  => 'general',
+    'section'  => 'fi-social',
     'settings' => 'twitter',
   ]));
 
@@ -84,14 +91,19 @@ function customize_register($wp_customize) {
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'facebook', [
     'label'    => __('Profil facebook', 'mytheme'),
-    'section'  => 'general',
+    'section'  => 'fi-social',
     'settings' => 'facebook',
   ]));
 
-  $wp_customize->add_section('social', [
-    'title'    => __('Social', 'mytheme'),
-    'priority' => 10,
+  $wp_customize->add_setting('youtube', [
+    'default'   => 'https://youtube.com/',
+    'transport' => 'refresh',
   ]);
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'youtube', [
+    'label'    => __('Chaîne youtube', 'mytheme'),
+    'section'  => 'fi-social',
+    'settings' => 'youtube',
+  ]));
 }
 
 add_action('customize_register', __NAMESPACE__ . '\\customize_register');
