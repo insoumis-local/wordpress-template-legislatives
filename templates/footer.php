@@ -10,6 +10,7 @@
   <?php endif; ?>
   <?php if (is_active_sidebar('sidebar-footer')): ?>
   <div class="container">
+    <?php get_template_part('templates/social'); ?>
     <?php dynamic_sidebar('sidebar-footer'); ?>
   </div>
   <?php endif; ?>

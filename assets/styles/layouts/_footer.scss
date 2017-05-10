@@ -12,8 +12,7 @@ footer.content-info {
   // Signup form
   .container-signup-footer {
     font-family: $font-family-serif;
-    position: relative;
-    top: -150px;
+    margin-top: -150px;
 
     .card {
       @include blue-card();
