@@ -1,6 +1,10 @@
 .navbar-default {
   font-family: $font-family-sans-serif;
 
+  @media (min-width: $screen-md-min) {
+    font-size: .8em;
+  }
+
   .navbar-nav .navbar-img {
     padding-top: 20px;
     padding-bottom: 20px;
