@@ -5,7 +5,17 @@ Description:        Base theme for FI legislatives
 Version:            0.1.0
 Author:             Edouard Cunibil <fi@duael.fr>
 Author URI:         https://duael.fr
+Tags:               one-column
+Text Domain:        wordpress-template-legislatives
 
 License:            MIT License
 License URI:        http://opensource.org/licenses/MIT
 */
+
+// Wordpress theme validators hacks
+// https://fr.wordpress.org/themes/upload/
+.sticky,
+.gallery-caption,
+.bypostauthor {
+  opacity: 1;
+}

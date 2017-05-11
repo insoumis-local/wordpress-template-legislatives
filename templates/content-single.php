@@ -10,6 +10,9 @@
     </header>
     <div class="entry-content">
       <?php the_content(); ?>
+      <p class="entry-tags">
+        <?php the_tags( $before, $sep, $after ); ?>        
+      </p>
     </div>
     <footer>
       <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
