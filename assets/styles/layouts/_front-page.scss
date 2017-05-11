@@ -23,11 +23,11 @@
       width: 0;
     }
 
-    @media (min-width: $screen-sm-min) {
+    @media (min-width: $screen-sm-min) and (orientation: portrait) {
       height: 40vh;
     }
 
-    @media (min-width: $screen-md-min) {
+    @media (orientation: landscape) {
       height: $cover-height;
       width: 55%;
 
@@ -53,11 +53,14 @@
       position: relative;
     }
 
-    @media (min-width: $screen-sm-min) {
-      .wrapper { height: $cover-height - 40vh; }
+    @media (min-width: $screen-sm-min) and (orientation: portrait) {
+      .wrapper {
+        height: $cover-height - 40vh;
+        max-width: 50%;
+      }
     }
 
-    @media (min-width: $screen-md-min) {
+    @media (orientation: landscape) {
       border-left: 1px solid white;
       bottom: 0;
       position: absolute;

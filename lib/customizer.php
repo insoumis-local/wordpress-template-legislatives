@@ -129,7 +129,7 @@ function customize_css() {
         background-image: url(<?php echo wp_get_attachment_url($cover_id); ?>);
       }
       <?php if ($cover_id = get_theme_mod('cover-desktop')): ?>
-      @media (min-width: 992px) {
+      @media (orientation: landscape) {
         .fi-cover .picture {
           background-image: url(<?php echo wp_get_attachment_url($cover_id); ?>);
         }
