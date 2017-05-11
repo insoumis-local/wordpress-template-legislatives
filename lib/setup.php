@@ -27,10 +27,10 @@ function setup() {
   // Register wp_nav_menu() menus
   // http://codex.wordpress.org/Function_Reference/register_nav_menus
   register_nav_menus([
-    'primary_navigation' => __('Primary Navigation', 'sage'),
-    'secondary_navigation' => __('Secondary Navigation', 'sage'),
-    'home_page_left_navigation' => __('Blue card only Left Nav', 'sage'),
-    'home_page_right_navigation' => __('Blue card only Right Nav', 'sage')
+    'primary_navigation' => __('Menu blanc', 'sage'),
+    'secondary_navigation' => __('Menu rouge', 'sage'),
+    'home_page_left_navigation' => __('Blue card only - Gauche', 'sage'),
+    'home_page_right_navigation' => __('Blue card only - Droite', 'sage')
   ]);
 
   // Enable post thumbnails
@@ -72,7 +72,7 @@ add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
  */
 function widgets_init() {
   register_sidebar([
-    'name'          => __('Sidebar', 'sage'),
+    'name'          => __('Barre latérale', 'sage'),
     'id'            => 'sidebar-primary',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
@@ -81,7 +81,7 @@ function widgets_init() {
   ]);
 
   register_sidebar([
-    'name'          => __('Footer', 'sage'),
+    'name'          => __('Pied de page', 'sage'),
     'id'            => 'sidebar-footer',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
@@ -90,7 +90,7 @@ function widgets_init() {
   ]);
 
   register_sidebar([
-    'name'          => __('Pre Footer', 'sage'),
+    'name'          => __('Zone bleue avant pied de page', 'sage'),
     'id'            => 'sidebar-pre-footer',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
