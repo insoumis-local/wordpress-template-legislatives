@@ -11,6 +11,7 @@
  * ======================================================================== */
 
 (function($) {
+  // Helper that calculates text width properly.
   function getWidthOfText($element) {
     // Create a dummy canvas (render invisible with css)
     var c = document.createElement('canvas');
@@ -40,27 +41,43 @@
   }
 
   var initFitText = function() {
-    var $wrapper = $('.fi-cover .candidates');
-    var $candidate = $wrapper.find('strong');
-    var $successor = $wrapper.find('span');
-
-    var maxWidth = $wrapper.width();
-    var fontSize = 50;
     var myFont = new FontFace('Montserrat', 'url(/wp-content/themes/fi-legislatives/dist/fonts/montserrat-v6-latin-700.woff2)');
+    var toFit = [
+      {
+        selector: '.fi-cover .candidates > strong',
+        startSize: 50
+      },
+      {
+        selector: '.fi-cover .candidates > span',
+        startSize: 'previous'
+      },
+      {
+        selector: '.fi-cover .logo .title',
+        startSize: 30
+      },
+      {
+        selector: '.fi-cover .logo .subtitle',
+        startSize: 25
+      }
+    ];
 
     myFont.load().then(function(font){
       // Needed so canvas can use it to calculate text width.
       document.fonts.add(font);
 
-      $candidate.css('font-size', fontSize + 'px');
-      while (Math.max($candidate[0].scrollWidth, getWidthOfText($candidate)) > maxWidth) {
-        $candidate.css('font-size', fontSize-- + 'px');
-      }
+      var $element, maxWidth, fontSize = 50;
+      toFit.forEach(function (item) {
+        $element = $(item.selector);
+        maxWidth = $element.parent().width();
+        if (item.startSize !== 'previous') {
+          fontSize = item.startSize;
+        }
 
-      $successor.css('font-size', fontSize + 'px');
-      while (Math.max($successor[0].scrollWidth, getWidthOfText($successor)) > maxWidth) {
-        $successor.css('font-size', fontSize-- + 'px');
-      }
+        $element.css('font-size', fontSize + 'px');
+        while (Math.max($element[0].scrollWidth, getWidthOfText($element)) > maxWidth) {
+          $element.css('font-size', fontSize-- + 'px');
+        }
+      });
     });
   };
   var resizeTimeout;
