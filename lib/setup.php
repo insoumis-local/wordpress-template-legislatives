@@ -64,6 +64,7 @@ function setup() {
 
   add_theme_support('custom-logo');
   add_theme_support('woocommerce');
+  add_theme_support('automatic-feed-links');
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 
