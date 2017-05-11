@@ -27,3 +27,9 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+// Wordpress theme validators compliance
+
+// https://codex.wordpress.org/Content_Width
+if ( ! isset( $content_width ) ) $content_width = 900;
+add_theme_support( 'automatic-feed-links' );

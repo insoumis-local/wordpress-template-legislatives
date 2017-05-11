@@ -6,6 +6,10 @@ use Roots\Sage\Assets;
 use WP_Customize_Control;
 use WP_Customize_Media_Control;
 
+function dummy_sanitize_callback($value) {
+  return $value;
+}
+
 /**
  * Add postMessage support
  */
@@ -13,17 +17,18 @@ function customize_register($wp_customize) {
   $wp_customize->get_setting('blogname')->transport = 'postMessage';
 
   $wp_customize->add_section('fi-home', [
-    'title'    => __('FI 2017 Home', 'mytheme'),
+    'title'    => __('FI 2017 Home', 'sage'),
     'priority' => 1000,
   ]);
 
   $wp_customize->add_setting('cover', [
     'default'   => '',
     'transport' => 'refresh',
+    'sanitize_callback' => 'dummy_sanitize_callback',
   ]);
   $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'cover', [
-    'label'    => __('Couverture mobile', 'mytheme'),
-    'description' => __('Taille recommandée : 960x570', 'mytheme'),
+    'label'    => __('Couverture mobile', 'sage'),
+    'description' => __('Taille recommandée : 960x570', 'sage'),
     'section'  => 'fi-home',
     'settings' => 'cover',
   ]));
@@ -31,10 +36,11 @@ function customize_register($wp_customize) {
   $wp_customize->add_setting('cover-desktop', [
     'default'   => '',
     'transport' => 'refresh',
+    'sanitize_callback' => 'dummy_sanitize_callback',
   ]);
   $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'cover-desktop', [
-    'label'    => __('Couverture desktop [optionnelle]', 'mytheme'),
-    'description' => __('Taille recommandée : 2000x1500 (avec le sujet centré)', 'mytheme'),
+    'label'    => __('Couverture desktop [optionnelle]', 'sage'),
+    'description' => __('Taille recommandée : 2000x1500 (avec le sujet centré)', 'sage'),
     'section'  => 'fi-home',
     'settings' => 'cover-desktop',
   ]));
@@ -42,9 +48,10 @@ function customize_register($wp_customize) {
   $wp_customize->add_setting('candidate1', [
     'default'   => '',
     'transport' => 'refresh',
+    'sanitize_callback' => 'dummy_sanitize_callback',
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'candidate1', [
-    'label'    => __('Candidat⋅e', 'mytheme'),
+    'label'    => __('Candidat⋅e', 'sage'),
     'section'  => 'fi-home',
     'settings' => 'candidate1',
   ]));
@@ -52,9 +59,10 @@ function customize_register($wp_customize) {
   $wp_customize->add_setting('candidate2', [
     'default'   => '',
     'transport' => 'refresh',
+    'sanitize_callback' => 'dummy_sanitize_callback',
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'candidate2', [
-    'label'    => __('Remplaçant⋅e', 'mytheme'),
+    'label'    => __('Remplaçant⋅e', 'sage'),
     'section'  => 'fi-home',
     'settings' => 'candidate2',
   ]));
@@ -62,9 +70,10 @@ function customize_register($wp_customize) {
   $wp_customize->add_setting('cities', [
     'default'   => '',
     'transport' => 'refresh',
+    'sanitize_callback' => 'dummy_sanitize_callback',
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'cities', [
-    'label'    => __('Villes', 'mytheme'),
+    'label'    => __('Villes', 'sage'),
     'section'  => 'fi-home',
     'settings' => 'cities',
     'type'     => 'textarea',
@@ -73,9 +82,10 @@ function customize_register($wp_customize) {
   $wp_customize->add_setting('district', [
     'default'   => '',
     'transport' => 'refresh',
+    'sanitize_callback' => 'dummy_sanitize_callback',
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'district', [
-    'label'    => __('Circonscription', 'mytheme'),
+    'label'    => __('Circonscription', 'sage'),
     'section'  => 'fi-home',
     'settings' => 'district',
   ]));
@@ -83,16 +93,17 @@ function customize_register($wp_customize) {
   // Social settings
 
   $wp_customize->add_section('fi-social', [
-    'title'    => __('FI 2017 Social', 'mytheme'),
+    'title'    => __('FI 2017 Social', 'sage'),
     'priority' => 1000,
   ]);
 
   $wp_customize->add_setting('twitter', [
     'default'   => 'https://twitter.com/',
     'transport' => 'refresh',
+    'sanitize_callback' => 'dummy_sanitize_callback',
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'twitter', [
-    'label'    => __('Profil twitter', 'mytheme'),
+    'label'    => __('Profil twitter', 'sage'),
     'section'  => 'fi-social',
     'settings' => 'twitter',
   ]));
@@ -100,9 +111,10 @@ function customize_register($wp_customize) {
   $wp_customize->add_setting('facebook', [
     'default'   => 'https://facebook.com/',
     'transport' => 'refresh',
+    'sanitize_callback' => 'dummy_sanitize_callback',
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'facebook', [
-    'label'    => __('Profil facebook', 'mytheme'),
+    'label'    => __('Profil facebook', 'sage'),
     'section'  => 'fi-social',
     'settings' => 'facebook',
   ]));
@@ -110,9 +122,10 @@ function customize_register($wp_customize) {
   $wp_customize->add_setting('youtube', [
     'default'   => 'https://youtube.com/',
     'transport' => 'refresh',
+    'sanitize_callback' => 'dummy_sanitize_callback',
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'youtube', [
-    'label'    => __('Chaîne youtube', 'mytheme'),
+    'label'    => __('Chaîne youtube', 'sage'),
     'section'  => 'fi-social',
     'settings' => 'youtube',
   ]));

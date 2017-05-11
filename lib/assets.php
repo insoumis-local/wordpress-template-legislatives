@@ -9,8 +9,10 @@ class JsonManifest {
   private $manifest;
 
   public function __construct($manifest_path) {
+    global $wp_filesystem;
+    
     if (file_exists($manifest_path)) {
-      $this->manifest = json_decode(file_get_contents($manifest_path), true);
+      $this->manifest = json_decode($wp_filesystem->get_contents($manifest_path), true);
     } else {
       $this->manifest = [];
     }
