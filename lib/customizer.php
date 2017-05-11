@@ -20,6 +20,7 @@ function customize_register($wp_customize) {
   $wp_customize->add_setting('cover', [
     'default'   => '',
     'transport' => 'refresh',
+    'sanitize_callback' => 'absint',
   ]);
   $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'cover', [
     'label'    => __('Couverture mobile', 'mytheme'),
@@ -42,6 +43,7 @@ function customize_register($wp_customize) {
   $wp_customize->add_setting('candidate1', [
     'default'   => '',
     'transport' => 'refresh',
+    'sanitize_callback' => 'wp_strip_all_tags',
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'candidate1', [
     'label'    => __('Candidat⋅e', 'mytheme'),
@@ -52,6 +54,7 @@ function customize_register($wp_customize) {
   $wp_customize->add_setting('candidate2', [
     'default'   => '',
     'transport' => 'refresh',
+    'sanitize_callback' => 'wp_strip_all_tags',
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'candidate2', [
     'label'    => __('Remplaçant⋅e', 'mytheme'),
@@ -62,6 +65,7 @@ function customize_register($wp_customize) {
   $wp_customize->add_setting('cities', [
     'default'   => '',
     'transport' => 'refresh',
+    'sanitize_callback' => 'wp_strip_all_tags',
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'cities', [
     'label'    => __('Villes', 'mytheme'),
@@ -73,6 +77,7 @@ function customize_register($wp_customize) {
   $wp_customize->add_setting('district', [
     'default'   => '',
     'transport' => 'refresh',
+    'sanitize_callback' => 'wp_strip_all_tags',
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'district', [
     'label'    => __('Circonscription', 'mytheme'),
@@ -90,6 +95,7 @@ function customize_register($wp_customize) {
   $wp_customize->add_setting('twitter', [
     'default'   => 'https://twitter.com/',
     'transport' => 'refresh',
+    'sanitize_callback' => 'esc_url',
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'twitter', [
     'label'    => __('Profil twitter', 'mytheme'),
@@ -100,6 +106,7 @@ function customize_register($wp_customize) {
   $wp_customize->add_setting('facebook', [
     'default'   => 'https://facebook.com/',
     'transport' => 'refresh',
+    'sanitize_callback' => 'esc_url',
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'facebook', [
     'label'    => __('Profil facebook', 'mytheme'),
@@ -110,6 +117,7 @@ function customize_register($wp_customize) {
   $wp_customize->add_setting('youtube', [
     'default'   => 'https://youtube.com/',
     'transport' => 'refresh',
+    'sanitize_callback' => 'esc_url',
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'youtube', [
     'label'    => __('Chaîne youtube', 'mytheme'),
