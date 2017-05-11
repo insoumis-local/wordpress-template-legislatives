@@ -32,6 +32,7 @@ function customize_register($wp_customize) {
   $wp_customize->add_setting('cover-desktop', [
     'default'   => '',
     'transport' => 'refresh',
+    'sanitize_callback' => 'absint',
   ]);
   $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'cover-desktop', [
     'label'    => __('Couverture desktop [optionnelle]', 'mytheme'),
