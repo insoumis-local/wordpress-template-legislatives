@@ -11,3 +11,6 @@ dans
 </a><?php echo $key < count($categories) - 1 ? ', ': '' ?>
 <?php } ?>
 </span>
+<p class="entry-tags text-muted">
+  <?php the_tags(); ?>
+</p>
