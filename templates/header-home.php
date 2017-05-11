@@ -20,7 +20,7 @@
         <?php echo get_theme_mod('district'); ?>
       </div>
       <div class="election">Élections législatives 2017</div>
-      <button class="scrolldown"><span>Suite</span></button>
+      <button class="scrolldown"><span>En savoir plus</span></button>
     </div>
   </div>
 </div>
