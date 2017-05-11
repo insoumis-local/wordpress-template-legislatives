@@ -11,6 +11,66 @@
  * ======================================================================== */
 
 (function($) {
+  function getWidthOfText($element) {
+    // Create a dummy canvas (render invisible with css)
+    var c = document.createElement('canvas');
+    // Get the context of the dummy canvas
+    var ctx = c.getContext('2d');
+    var txt = $element.text();
+    if ($element.css('text-transform') === 'uppercase') {
+      txt = txt.toUpperCase();
+    }
+    else if ($element.css('text-transform') === 'lowercase') {
+      txt = txt.toLowerCase();
+    }
+    else if ($element.css('text-transform') === 'capitalize') {
+      txt = txt.replace(/^([a-z\u00E0-\u00FC])|\s+([a-z\u00E0-\u00FC])/g, function ($1) {
+        return $1.toUpperCase();
+      });
+    }
+    // Set the context.font to the font that you are using
+    var font = $element.css('font-style');
+    font += ' ' + $element.css('font-variant');
+    font += ' ' + $element.css('font-weight');
+    font += ' ' + $element.css('font-size');
+    font += ' ' + $element.css('font-family').substr(0, $element.css('font-family').indexOf(','));
+    ctx.font = font;
+    // Measure the string
+    return ctx.measureText(txt).width;
+  }
+
+  var initFitText = function() {
+    var $wrapper = $('.fi-cover .candidates');
+    var $candidate = $wrapper.find('strong');
+    var $successor = $wrapper.find('span');
+
+    var maxWidth = $wrapper.width();
+    var fontSize = 50;
+    var myFont = new FontFace('Montserrat', 'url(/wp-content/themes/fi-legislatives/dist/fonts/montserrat-v6-latin-700.woff2)');
+
+    myFont.load().then(function(font){
+      // Needed so canvas can use it to calculate text width.
+      document.fonts.add(font);
+
+      $candidate.css('font-size', fontSize + 'px');
+      while (Math.max($candidate[0].scrollWidth, getWidthOfText($candidate)) > maxWidth) {
+        $candidate.css('font-size', fontSize-- + 'px');
+      }
+
+      $successor.css('font-size', fontSize + 'px');
+      while (Math.max($successor[0].scrollWidth, getWidthOfText($successor)) > maxWidth) {
+        $successor.css('font-size', fontSize-- + 'px');
+      }
+    });
+  };
+  var resizeTimeout;
+  $(window).resize(function() {
+    if (resizeTimeout) {
+      clearTimeout(resizeTimeout);
+    }
+    resizeTimeout = setTimeout(initFitText, 50);
+  });
+
   var initScrollDown = function() {
     $('.fi-cover .scrolldown').bind('click', function() {
       $('html, body').animate({
@@ -71,6 +131,7 @@
     'common': {
       init: function() {
         initMasonry();
+        initFitText();
         initScrollDown();
       },
       finalize: function() {

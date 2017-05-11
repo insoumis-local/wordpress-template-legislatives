@@ -6,8 +6,7 @@
       <h1 class="candidates">
         <strong><?php echo get_theme_mod('candidate1'); ?></strong>
         <?php if (!empty(get_theme_mod('candidate2'))): ?>
-        <span class="separator"> & </span>
-        <span class="successor"><?php echo get_theme_mod('candidate2'); ?></span>
+        <span class="successor">& <?php echo get_theme_mod('candidate2'); ?></span>
         <?php endif; ?>
       </h1>
       <div class="logo">
