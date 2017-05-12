@@ -42,7 +42,7 @@ function customize_register($wp_customize) {
   ]));
 
   $wp_customize->add_setting('candidate1', [
-    'default'   => '',
+    'default'   => 'Candidat⋅e',
     'transport' => 'refresh',
     'sanitize_callback' => 'wp_strip_all_tags',
   ]);
@@ -53,18 +53,19 @@ function customize_register($wp_customize) {
   ]));
 
   $wp_customize->add_setting('candidate2', [
-    'default'   => '',
+    'default'   => 'Remplaçant⋅e',
     'transport' => 'refresh',
     'sanitize_callback' => 'wp_strip_all_tags',
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'candidate2', [
     'label'    => __('Remplaçant⋅e', 'sage'),
+    'description' => __('Supprimez cette valeur si votre remplaçant⋅e n\'a pas encore été désigné⋅e.', 'sage'),
     'section'  => 'fi-home',
     'settings' => 'candidate2',
   ]));
 
   $wp_customize->add_setting('cities', [
-    'default'   => '',
+    'default'   => "Ville 1, Ville2\nCanton A, Canton B\nVille Nème arrondissement",
     'transport' => 'refresh',
     'sanitize_callback' => 'wp_strip_all_tags',
   ]);
@@ -76,7 +77,7 @@ function customize_register($wp_customize) {
   ]));
 
   $wp_customize->add_setting('district', [
-    'default'   => '',
+    'default'   => 'Xème circonscription du Département',
     'transport' => 'refresh',
     'sanitize_callback' => 'wp_strip_all_tags',
   ]);
