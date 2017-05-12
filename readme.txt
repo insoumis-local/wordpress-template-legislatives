@@ -16,12 +16,7 @@ MIT
 == Additional Notes ==
 
 == Supported Browser ==
-Mozilla Firefox, Google Chrome, Safari, IE 10,9,8,7
+Mozilla Firefox, Google Chrome, Safari, IE 11, Edge
 
 == Version history ==
-
-1.0.7 - Tags affichés sur page d'article plutôt que les listes
-
-1.0.4 - Compatibilité avec github-updater
-
-1.0.3 - Ajouté logo Phi à la page d'identification
+See CHANGES.md
