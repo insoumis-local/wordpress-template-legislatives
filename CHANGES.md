@@ -1,3 +1,6 @@
+### 1.0.10: 12 Mai 2017
+* Ensure the cover is enabled by default.
+
 ### 1.0.9: 12 Mai 2017
 * Update theme name.
 * Update theme screenshot.
