@@ -13,7 +13,7 @@
             <div class="wrapper">
                 <h1 class="candidates"><?php echo Titles\title(); ?></h1>
                 <?php the_content(); ?>
-                <button class="scrolldown"><span>Suite</span></button>
+                <button class="scrolldown"><span>En savoir plus</span></button>
             </div>
         </div>
     </div>
