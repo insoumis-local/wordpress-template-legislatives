@@ -27,3 +27,16 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+// Add Phi logo to wp-login
+
+function phi_login_logo() { ?>
+  <style type="text/css">
+    #login h1 a, .login h1 a {
+      background: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/phi.svg) center no-repeat transparent;
+      -webkit-background-size: contain;
+      background-size: contain;
+    }
+  </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'phi_login_logo' );
