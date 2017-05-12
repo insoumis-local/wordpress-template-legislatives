@@ -1,7 +1,7 @@
 <header class="banner">
   <?php
   if (is_front_page() && !is_page_template('template-home.php') && get_theme_mod('cover-enabled')) {
-    get_template_part('templates/header-home');
+    get_template_part('templates/cover');
   }
   ?>
   <nav class="nav-primary navbar navbar-default navbar-static-top">
