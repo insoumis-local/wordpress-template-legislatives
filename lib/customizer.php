@@ -17,6 +17,18 @@ function customize_register($wp_customize) {
     'priority' => 1000,
   ]);
 
+  $wp_customize->add_setting('cover-enabled', [
+    'default'   => 1,
+    'transport' => 'refresh',
+    'sanitize_callback' => 'absint',
+  ]);
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'cover-enabled', [
+    'label'    => __('Activer l\'en-tête', 'sage'),
+    'section'  => 'fi-home',
+    'settings' => 'cover-enabled',
+    'type'     => 'checkbox',
+  ]));
+
   $wp_customize->add_setting('cover', [
     'default'   => '',
     'transport' => 'refresh',
