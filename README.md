@@ -1,8 +1,18 @@
 # Contribuer
 
+## Développement
+
 Thème basé sur https://github.com/roots/sage. Se référer à la [documentation](https://roots.io/sage/docs/theme-installation/) pour l'installer et le modifier.
 
-Pour faire une mise à jour, modifier le fichier `CHANGES.md` (infos) et `style.css` (version). La mise à jour sera détectée par chaque site grâce au plugin `github-updater`.
+## Release
+
+Pour créer une nouvelle version :
+
+* [modifier le fichier `CHANGES.md` (infos)](https://github.com/insoumis-local/wordpress-template-legislatives/blob/master/CHANGES.md)
+* [modifier le fichier `style.css` (version)](https://github.com/insoumis-local/wordpress-template-legislatives/blob/master/style.css)
+* [commit, puis créer une nouvelle release  au format `x.x.x`](https://github.com/insoumis-local/wordpress-template-legislatives/releases/new) 
+
+En cas de doute sur le numéro de version, se référer à [semver](http://putaindecode.io/fr/articles/semver/). La mise à jour sera ensuite détectée par chaque site grâce au plugin `github-updater`.
 
 # Thème Législatives Insoumises
 
