@@ -1,3 +1,9 @@
+# Contribuer
+
+Thème basé sur https://github.com/roots/sage. Se référer à la [documentation](https://roots.io/sage/docs/theme-installation/) pour l'installer et le modifier.
+
+Pour faire une mise à jour, modifier le fichier `CHANGES.md` (infos) et `style.css` (version). La mise à jour sera détectée par chaque site grâce au plugin `github-updater`.
+
 # Thème Législatives Insoumises
 
 Choses notables :
