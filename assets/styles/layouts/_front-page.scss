@@ -6,8 +6,11 @@
   position: relative;
 
   .picture {
+    background-color: $brand-secondary;
+    background-image: url('../images/phi_bleu.svg');
     background-position: center center;
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 75% 75%;
     height: 30vh;
     overflow: hidden;
     position: relative;
