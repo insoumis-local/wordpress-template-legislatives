@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Content (No blue card)
+ * Template Name: Contenu (Sans zone bleue)
  */
 ?>
 

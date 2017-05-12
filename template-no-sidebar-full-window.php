@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: No Sidebar (Full window)
+ * Template Name: Pas de barre latérale (pleine largeur)
  */
 ?>
 
