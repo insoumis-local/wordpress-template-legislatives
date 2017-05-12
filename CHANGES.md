@@ -1,3 +1,7 @@
+### 1.0.9: 12 Mai 2017
+* Update theme name.
+* Update theme screenshot.
+
 ### 1.0.8: 12 Mai 2017
 * Ajout de settings par défaut pour que la cover apparaisse dès l'installation du thème.
 * Ajout d'une case à cocher pour désactiver le cartouche d'accueil.
