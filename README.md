@@ -8,9 +8,8 @@ Thème basé sur https://github.com/roots/sage. Se référer à la [documentatio
 
 Pour créer une nouvelle version :
 
-* [modifier le fichier `CHANGES.md` (infos)](https://github.com/insoumis-local/wordpress-template-legislatives/blob/master/CHANGES.md)
+* [modifier le fichier `readme.txt` (changelog)](https://github.com/insoumis-local/wordpress-template-legislatives/blob/master/CHANGES.md)
 * [modifier le fichier `style.css` (version)](https://github.com/insoumis-local/wordpress-template-legislatives/blob/master/style.css)
-* [commit, puis créer une nouvelle release  au format `x.x.x`](https://github.com/insoumis-local/wordpress-template-legislatives/releases/new) 
 
 En cas de doute sur le numéro de version, se référer à [semver](http://putaindecode.io/fr/articles/semver/). La mise à jour sera ensuite détectée par chaque site grâce au plugin `github-updater`.
 
