@@ -1,16 +1,16 @@
 .fi-cover {
   $cover-height: 100vh;
 
-  height: $cover-height;
+  min-height: $cover-height;
   position: relative;
 
   .picture {
     background-color: $brand-secondary;
-    background-image: url('../images/phi_bleu.svg');
+    background-image: url('../images/phi_blanc.svg');
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 75% 75%;
-    height: 30vh;
+    background-size: contain;
+    min-height: 40vh;
     overflow: hidden;
     position: relative;
 
@@ -27,11 +27,11 @@
     }
 
     @media (min-width: $screen-sm-min) and (orientation: portrait) {
-      height: 40vh;
+      min-height: 50vh;
     }
 
     @media (orientation: landscape) {
-      height: $cover-height;
+      min-height: $cover-height;
       width: 55%;
 
       &:after {
@@ -47,9 +47,16 @@
     background: white;
     text-align: center;
 
+    @media (max-width: 400px) {
+      font-size: .9em;      
+    }
+
     .wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       box-sizing: border-box;
-      height: $cover-height - 30vh;
+      min-height: $cover-height - 40vh;
       margin: 0 auto;
       max-width: 320px;
       padding-bottom: 60px;
@@ -58,8 +65,8 @@
 
     @media (min-width: $screen-sm-min) and (orientation: portrait) {
       .wrapper {
-        height: $cover-height - 40vh;
-        max-width: 50%;
+        min-height: $cover-height - 50vh;
+        max-width: 90%;
       }
     }
 
@@ -73,7 +80,7 @@
       width: 45%;
 
       .wrapper {
-        height: $cover-height;
+        min-height: $cover-height;
         margin-left: 0;
         max-width: 500px;
       }
@@ -104,32 +111,41 @@
   }
 
   .logo {
-    background: transparent url(../images/phi.svg) no-repeat 10px center;
-    background-size: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: $brand-secondary;
     font-family: "Montserrat", sans-serif;
-    padding: 1em 1rem 1em 55px;
+    padding: 1em 1rem 1em;
 
-    .title {
-      font-size: 1.25em;
-      text-transform: uppercase;
+    @media (min-width: $screen-sm-min) and (orientation: landscape) {
+      justify-content: flex-end;
     }
 
     @media (min-width: $screen-md-min) {
       background: none;
       font-size: 1.5em;
-      padding: 0 1rem 6rem 55px;
+      padding: 0 1rem 6rem 0;
+    }
 
-      &:before {
-        background: transparent url(../images/phi.svg) no-repeat top left;
-        background-size: cover;
-        content: "";
-        display: block;
-        height: 102px;
-        right: 390px;
-        position: absolute;
-        width: 80px;
+    .phi {
+      margin-right: 20px;
+
+      > img {
+        width: 35px;
+
+        @media (min-width: $screen-md-min) {
+          width: 50px;
+        }
       }
+    }
+
+    .text {
+    }
+
+    .title {
+      font-size: 1.25em;
+      text-transform: uppercase;
     }
   }
 
