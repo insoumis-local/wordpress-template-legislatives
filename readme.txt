@@ -19,4 +19,25 @@ MIT
 Mozilla Firefox, Google Chrome, Safari, IE 11, Edge
 
 == Version history ==
-See CHANGES.md
+
+= 1.0.10 =
+* Ensure the cover is enabled by default.
+
+= 1.0.9 =
+* Update theme name.
+* Update theme screenshot.
+
+= 1.0.8 =
+* Ajout de settings par défaut pour que la cover apparaisse dès l'installation du thème.
+* Ajout d'une case à cocher pour désactiver le cartouche d'accueil.
+* Changement de l'auteur du thème pour mettre en valeur le travail collectif.
+
+= 1.0.7 =
+* Tags affichés sur page d'article plutôt que les listes
+
+= 1.0.4 =
+* Compatibilité avec github-updater
+
+= 1.0.3 =
+* Ajouté logo Phi à la page d'identification
+

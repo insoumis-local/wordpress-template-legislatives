@@ -45,7 +45,7 @@ Thème basé sur https://github.com/roots/sage/tree/8.5.1. Se référer à la [d
 
 Pour créer une nouvelle version :
 
-* [modifier le fichier `CHANGES.md` (changelog)](https://github.com/insoumis-local/wordpress-template-legislatives/blob/master/CHANGES.md)
+* [modifier le fichier `readme.txt` (changelog)](https://github.com/insoumis-local/wordpress-template-legislatives/blob/master/readme.txt)
 * [modifier le fichier `style.css` (version)](https://github.com/insoumis-local/wordpress-template-legislatives/blob/master/style.css)
 
 En cas de doute sur le numéro de version, se référer à [semver](http://putaindecode.io/fr/articles/semver/). La mise à jour sera ensuite détectée par chaque site grâce au plugin `github-updater`.
