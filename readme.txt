@@ -20,8 +20,14 @@ Mozilla Firefox, Google Chrome, Safari, IE 11, Edge
 
 == Version history ==
 
+= 1.0.11 =
+* N'affiche plus la catégorie "Non classé"
+* Ajustements divers de mise en page
+* Lien sur les images dans les listes d'article
+* Ajouté favicon
+
 = 1.0.10 =
-* Ensure the cover is enabled by default.
+* Couverture d'accueil activée par défaut
 
 = 1.0.9 =
 * Update theme name.
