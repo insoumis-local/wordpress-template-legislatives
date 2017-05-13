@@ -39,7 +39,7 @@ Afin d’installer le thème “FI 2017”  dans une installation wordpress que 
 
 ## Développement
 
-Thème basé sur https://github.com/roots/sage. Se référer à la [documentation](https://roots.io/sage/docs/theme-installation/) pour l'installer et le modifier.
+Thème basé sur https://github.com/roots/sage/tree/8.5.1. Se référer à la [documentation](https://roots.io/sage/docs/theme-installation/) pour l'installer et le modifier.
 
 ## Release
 
