@@ -45,10 +45,25 @@
     }
     .content {
       @include blue-card();
+      padding: 0;
+    }
+    .entry-title {
+      margin-top: 0;
+      margin-bottom: .25em;
+    }
+    .entry-meta {
+      margin: 0;
+      font-size: .9em;
 
+      a {
+        display: inline-block;
+        color: inherit;
+        margin-left: .25em;
+      }
     }
     .entry-summary {
       padding: 15px;
+      padding-top: 0;
     }
     padding: 15px;
     box-sizing: border-box;

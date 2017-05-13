@@ -28,7 +28,7 @@
       <?php get_template_part('templates/entry-meta'); ?>
     </header>
     <div class="entry-summary">
-      <?php the_excerpt(); ?>
+      <?php echo get_the_excerpt(); ?>
     </div>
   </div>
 </article>
