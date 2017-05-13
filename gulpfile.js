@@ -67,6 +67,12 @@ var enabled = {
 // Path to the compiled assets manifest in the dist directory
 var revManifest = path.dist + 'assets.json';
 
+// Error checking; produce an error rather than crashing.
+var onError = function(err) {
+  console.log(err.toString());
+  this.emit('end');
+};
+
 // ## Reusable Pipelines
 // See https://github.com/OverZealous/lazypipe
 
@@ -86,15 +92,15 @@ var cssTasks = function(filename) {
       return gulpif(enabled.maps, sourcemaps.init());
     })
     .pipe(function() {
+      return gulpif('*.less', less());
+    })
+    .pipe(function() {
       return gulpif('*.scss', sass({
         outputStyle: 'nested', // libsass doesn't support expanded yet
         precision: 10,
         includePaths: ['.'],
         errLogToConsole: !enabled.failStyleTask
       }));
-    })
-    .pipe(function() {
-      return gulpif('*.less', less());
     })
     .pipe(concat, filename)
     .pipe(autoprefixer, {
@@ -177,6 +183,7 @@ gulp.task('styles', ['wiredep'], function() {
       });
     }
     merged.add(gulp.src(dep.globs, {base: 'styles'})
+      .pipe(plumber({errorHandler: onError}))
       .pipe(cssTasksInstance));
   });
   return merged
@@ -191,6 +198,7 @@ gulp.task('scripts', ['jshint'], function() {
   manifest.forEachDependency('js', function(dep) {
     merged.add(
       gulp.src(dep.globs, {base: 'scripts'})
+        .pipe(plumber({errorHandler: onError}))
         .pipe(jsTasks(dep.name))
     );
   });
@@ -212,11 +220,11 @@ gulp.task('fonts', function() {
 // `gulp images` - Run lossless compression on all the images.
 gulp.task('images', function() {
   return gulp.src(globs.images)
-    .pipe(imagemin({
-      progressive: true,
-      interlaced: true,
-      svgoPlugins: [{removeUnknownsAndDefaults: false}, {cleanupIDs: false}]
-    }))
+    .pipe(imagemin([
+      imagemin.jpegtran({progressive: true}),
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.svgo({plugins: [{removeUnknownsAndDefaults: false}, {cleanupIDs: false}]})
+    ]))
     .pipe(gulp.dest(path.dist + 'images'))
     .pipe(browserSync.stream());
 });
@@ -243,14 +251,14 @@ gulp.task('clean', require('del').bind(null, [path.dist]));
 // build step for that asset and inject the changes into the page.
 // See: http://www.browsersync.io
 gulp.task('watch', function() {
-//   browserSync.init({
-//     files: ['{lib,templates}/**/*.php', '*.php'],
-//     proxy: config.devUrl,
-//     snippetOptions: {
-//       whitelist: ['/wp-admin/admin-ajax.php'],
-//       blacklist: ['/wp-admin/**']
-//     }
-//   });
+  browserSync.init({
+    files: ['{lib,templates}/**/*.php', '*.php'],
+    proxy: config.devUrl,
+    snippetOptions: {
+      whitelist: ['/wp-admin/admin-ajax.php'],
+      blacklist: ['/wp-admin/**']
+    }
+  });
   gulp.watch([path.source + 'styles/**/*'], ['styles']);
   gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
   gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
