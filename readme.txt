@@ -1,3 +1,7 @@
+### 1.0.13
+* Traduction du nom des dernières zones de menu.
+* Amélioration du label et de la description des champs image du thème.
+
 ### 1.0.12
 * Prend en compte les sauts de lignes dans le champ ville.
 
