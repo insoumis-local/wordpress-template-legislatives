@@ -79,7 +79,7 @@ function customize_register($wp_customize) {
   $wp_customize->add_setting('cities', [
     'default'   => "Ville 1, Ville2\nCanton A, Canton B\nVille Nème arrondissement",
     'transport' => 'refresh',
-    'sanitize_callback' => 'wp_strip_all_tags',
+    'sanitize_callback' => __NAMESPACE__ . '\\fi_sanitize_cities',
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'cities', [
     'label'    => __('Villes', 'sage'),
@@ -139,8 +139,11 @@ function customize_register($wp_customize) {
     'settings' => 'youtube',
   ]));
 }
-
 add_action('customize_register', __NAMESPACE__ . '\\customize_register');
+
+function fi_sanitize_cities($string) {
+  return wp_strip_all_tags($string, FALSE);
+}
 
 function customize_css() {
   $cover_id = get_theme_mod('cover');
