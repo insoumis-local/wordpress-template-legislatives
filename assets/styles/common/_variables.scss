@@ -27,6 +27,7 @@ $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
 $brand-primary:         #0098b6; // blue
 $brand-secondary:       #c9462c; // orange
+$brand-gray:            #0F4B57;
 $brand-success:         #5cb85c !default;
 $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
@@ -39,7 +40,7 @@ $brand-danger:          #d9534f !default;
 //** Background color for `<body>`.
 $body-bg:               #fff !default;
 //** Global text color on `<body>`.
-$text-color: $gray-dark !default;
+$text-color: $brand-gray !default;
 
 //** Global textual link color.
 $link-color:            $brand-primary !default;
