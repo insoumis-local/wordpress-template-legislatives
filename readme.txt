@@ -1,11 +1,14 @@
+### 1.0.12
+* Prend en compte les sauts de lignes dans le champ ville.
+
 ### 1.0.11
-* N'affiche plus la catégorie "Non classé"
-* Ajustements divers de mise en page
-* Lien sur les images dans les listes d'article
-* Ajouté favicon
+* N'affiche plus la catégorie "Non classé".
+* Ajustements divers de mise en page.
+* Lien sur les images dans les listes d'article.
+* Ajouté favicon.
 
 ### 1.0.10
-* Couverture d'accueil activée par défaut
+* Couverture d'accueil activée par défaut.
 
 ### 1.0.9
 * Update theme name.
@@ -17,11 +20,10 @@
 * Changement de l'auteur du thème pour mettre en valeur le travail collectif.
 
 ### 1.0.7
-* Tags affichés sur page d'article plutôt que les listes
+* Tags affichés sur page d'article plutôt que les listes.
 
 ### 1.0.4
-* Compatibilité avec github-updater
+* Compatibilité avec github-updater.
 
 ### 1.0.3
-* Ajouté logo Phi à la page d'identification
-
+* Ajouté logo Phi à la page d'identification.
