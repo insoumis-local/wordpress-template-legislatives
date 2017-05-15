@@ -29,8 +29,8 @@ function setup() {
   register_nav_menus([
     'primary_navigation' => __('Menu blanc', 'sage'),
     'secondary_navigation' => __('Menu rouge', 'sage'),
-    'home_page_left_navigation' => __('Blue card only - Gauche', 'sage'),
-    'home_page_right_navigation' => __('Blue card only - Droite', 'sage')
+    'home_page_left_navigation' => __('Zone bleue uniquement - Gauche', 'sage'),
+    'home_page_right_navigation' => __('Zone bleue uniquement - Droite', 'sage')
   ]);
 
   // Enable post thumbnails
