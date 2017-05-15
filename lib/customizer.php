@@ -35,7 +35,7 @@ function customize_register($wp_customize) {
     'sanitize_callback' => 'absint',
   ]);
   $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'cover', [
-    'label'    => __('Couverture mobile', 'sage'),
+    'label'    => __('Image de couverture par défaut', 'sage'),
     'description' => __('Taille recommandée : 960x570', 'sage'),
     'section'  => 'fi-home',
     'settings' => 'cover',
@@ -47,8 +47,8 @@ function customize_register($wp_customize) {
     'sanitize_callback' => 'absint',
   ]);
   $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'cover-desktop', [
-    'label'    => __('Couverture desktop [optionnelle]', 'sage'),
-    'description' => __('Taille recommandée : 2000x1500 (avec le sujet centré)', 'sage'),
+    'label'    => __('[option] Grande image de couverture', 'sage'),
+    'description' => __('Taille recommandée : 2000x1500 (avec le sujet centré). Sera utilisée en remplacement de l\'image par défaut pour les appareils à grand écran.', 'sage'),
     'section'  => 'fi-home',
     'settings' => 'cover-desktop',
   ]));
