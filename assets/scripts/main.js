@@ -41,7 +41,7 @@
   }
 
   var initFitText = function() {
-    var myFont = new FontFace('Montserrat', 'url(/wp-content/themes/fi-legislatives/dist/fonts/montserrat-v6-latin-700.woff2)');
+    var myFont = new FontFace('Montserrat', 'url(/wp-content/themes/wordpress-template-legislatives/dist/fonts/montserrat-v6-latin-700.woff2)');
     var toFit = [
       {
         selector: '.fi-cover .candidates > strong',
