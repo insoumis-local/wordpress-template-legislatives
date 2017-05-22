@@ -3,6 +3,8 @@
 * Ajout des shortcodes [fi-twitter], [fi-facebook] et [fi-youtube].
 * Ajout des shortcodes [fi-cities], [fi-cities newline] et [fi-cities join=", "].
 * Ajout d'une coupe automatique à 150 caractères pour les villes afin d'éviter les débordements.
+* Renomme le template "Accueil" en "Couverture" pour éviter la confusion.
+* Corrige le style du template "Couverture".
 
 ### 1.0.14
 * Correction d'un bug sur le calcul de la taille du texte de la couverture.
