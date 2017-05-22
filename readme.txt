@@ -1,3 +1,9 @@
+### 1.0.15
+* Ajout des shortcodes [fi-candidate1], [fi-candidate2] et [fi-district].
+* Ajout des shortcodes [fi-twitter], [fi-facebook] et [fi-youtube].
+* Ajout des shortcodes [fi-cities], [fi-cities newline] et [fi-cities join=", "].
+* Ajout d'une coupe automatique à 150 caractères pour les villes afin d'éviter les débordements.
+
 ### 1.0.14
 * Correction d'un bug sur le calcul de la taille du texte de la couverture.
 
