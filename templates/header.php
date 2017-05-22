@@ -1,6 +1,6 @@
 <header class="banner">
   <?php
-  if (is_front_page() && !is_page_template('template-home.php') && get_theme_mod('cover-enabled', 1)) {
+  if (is_front_page() && !is_page_template('template-cover.php') && get_theme_mod('cover-enabled', 1)) {
     get_template_part('templates/cover');
   }
   ?>
