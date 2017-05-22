@@ -36,3 +36,24 @@ add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
  * Change WooCommerce checkout page
  */
 add_filter('woocommerce_enable_order_notes_field', '__return_false');
+
+/**
+ * Custom shortcodes.
+ */
+foreach (['candidate1', 'candidate2', 'district', 'twitter', 'facebook', 'youtube'] as $setting) {
+  add_shortcode('fi-' . $setting, function ($atts) use ($setting) {
+    return get_theme_mod($setting);
+  });
+}
+add_shortcode('fi-cities', function ($atts) {
+  $cities = get_theme_mod('cities');
+  if (!empty($atts)) {
+    if (array_search('newline', $atts) !== FALSE) {
+      $cities = nl2br($cities);
+    }
+    elseif ($atts['join']) {
+      $cities = implode($atts['join'], explode("\n", $cities));
+    }
+  }
+  return $cities;
+});
