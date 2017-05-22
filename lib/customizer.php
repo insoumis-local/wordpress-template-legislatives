@@ -83,6 +83,7 @@ function customize_register($wp_customize) {
   ]);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'cities', [
     'label'    => __('Villes', 'sage'),
+    'description' => __('Champ limité à 150 caractères, espaces compris.', 'sage'),
     'section'  => 'fi-home',
     'settings' => 'cities',
     'type'     => 'textarea',
@@ -142,7 +143,7 @@ function customize_register($wp_customize) {
 add_action('customize_register', __NAMESPACE__ . '\\customize_register');
 
 function fi_sanitize_cities($string) {
-  return wp_strip_all_tags($string, FALSE);
+  return mb_substr(wp_strip_all_tags($string, FALSE), 0, 150);
 }
 
 function customize_css() {

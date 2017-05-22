@@ -1,7 +1,7 @@
 .fi-cover {
   $cover-height: 100vh;
 
-  min-height: $cover-height;
+  height: $cover-height;
   position: relative;
 
   .picture {
@@ -10,7 +10,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
-    min-height: 40vh;
+    height: 40vh;
     overflow: hidden;
     position: relative;
 
@@ -27,11 +27,11 @@
     }
 
     @media (min-width: $screen-sm-min) and (orientation: portrait) {
-      min-height: 50vh;
+      height: 50vh;
     }
 
     @media (orientation: landscape) {
-      min-height: $cover-height;
+      height: $cover-height;
       width: 55%;
 
       &:after {
@@ -53,11 +53,8 @@
     }
 
     .wrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
       box-sizing: border-box;
-      min-height: $cover-height - 40vh;
+      height: $cover-height - 40vh;
       margin: 0 auto;
       max-width: 320px;
       padding-bottom: 60px;
@@ -66,7 +63,7 @@
 
     @media (min-width: $screen-sm-min) and (orientation: portrait) {
       .wrapper {
-        min-height: $cover-height - 50vh;
+        height: $cover-height - 50vh;
         max-width: 90%;
       }
     }
@@ -81,7 +78,7 @@
       width: 45%;
 
       .wrapper {
-        min-height: $cover-height;
+        height: $cover-height;
         margin-left: 0;
         max-width: 500px;
       }
